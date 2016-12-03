@@ -1,2 +1,2 @@
 This project is the implementation of Udacity’s Developing Android Apps course final project “Popular Movies App” by Maheed Hatem. 
-To run the app change MOVIE_DB_API_KEY in build.gradle in app module with a key from https://www.themoviedb.org/ . 
+To run the app change MOVIE_DB_API_KEY string in MovieContract.java under package com.example.maheed.popularmoviesapp.Data with a key from https://www.themoviedb.org/ . 

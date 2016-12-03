@@ -6,6 +6,8 @@ import android.provider.BaseColumns;
  * Created by Maheed on 11/5/2016.
  */
 public class MovieContract {
+
+    public static String MOVIE_DB_API_KEY = "INSERT_API_KEY_HERE";
     public static final class FavoriteMovieEntry implements BaseColumns{
         public static final String TABLE_NAME = "favorite_movie";
 

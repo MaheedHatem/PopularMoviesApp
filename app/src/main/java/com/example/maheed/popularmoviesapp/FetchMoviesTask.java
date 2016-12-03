@@ -10,6 +10,7 @@ import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 
 import com.example.maheed.popularmoviesapp.Data.Movie;
+import com.example.maheed.popularmoviesapp.Data.MovieContract;
 import com.example.maheed.popularmoviesapp.Data.MovieDbHelper;
 
 import org.json.JSONArray;
@@ -61,7 +62,7 @@ public class FetchMoviesTask extends AsyncTask<String,Void,ArrayList<Movie>> {
             final String MOVIES_DB_BASE_URL = "http://api.themoviedb.org/3/movie";
             final String API_KEY_PARAM = "api_key";
             Uri builtUri = Uri.parse(MOVIES_DB_BASE_URL).buildUpon().appendPath(SORT_ORDER).
-                    appendQueryParameter(API_KEY_PARAM , BuildConfig.MOVIE_DB_API_KEY).build();
+                    appendQueryParameter(API_KEY_PARAM , MovieContract.MOVIE_DB_API_KEY).build();
             URL url = new URL(builtUri.toString());
             urlConnection = (HttpURLConnection)url.openConnection();
             urlConnection.setRequestMethod("GET");

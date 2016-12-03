@@ -1,7 +1,9 @@
 package com.example.maheed.popularmoviesapp;
 
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -16,6 +18,7 @@ import android.widget.GridView;
 import android.widget.ListView;
 
 import com.example.maheed.popularmoviesapp.Data.Movie;
+import com.example.maheed.popularmoviesapp.Data.MovieContract;
 
 import java.util.ArrayList;
 import java.util.concurrent.Callable;
@@ -68,7 +71,20 @@ public class MoviesFragment extends Fragment {
         if (savedInstanceState != null && savedInstanceState.containsKey(SELECTED_POSITION)) {
             mPosition = savedInstanceState.getInt(SELECTED_POSITION);
         }
-        updateMovies();
+        if(MovieContract.MOVIE_DB_API_KEY.equals("INSERT_API_KEY_HERE")){
+            new android.support.v7.app.AlertDialog.Builder(getActivity())
+                    .setTitle("Error")
+                    .setMessage("Please change the API_KEY as specified in the README file")
+                    .setNeutralButton(android.R.string.ok, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                        }
+                    })
+                    .setIcon(android.R.drawable.ic_dialog_alert)
+                    .show();
+        }
+        else{
+            updateMovies();
+        }
         return view;
     }
 

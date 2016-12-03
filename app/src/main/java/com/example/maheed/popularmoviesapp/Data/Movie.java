@@ -12,7 +12,6 @@ public class Movie implements Serializable{
     private double mRating;
     private String mReleaseDate;
     private String mId;
-
     public String getId() {
         return mId;
     }

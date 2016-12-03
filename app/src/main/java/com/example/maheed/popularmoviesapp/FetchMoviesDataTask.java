@@ -9,6 +9,8 @@ import android.support.v4.util.Pair;
 import android.util.Log;
 import android.widget.ArrayAdapter;
 
+import com.example.maheed.popularmoviesapp.Data.MovieContract;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -51,7 +53,7 @@ public class FetchMoviesDataTask extends AsyncTask<String, Void, ArrayList<Pair<
             final String API_KEY_PARAM = "api_key";
             Uri builtUri = Uri.parse(MOVIES_DB_BASE_URL).buildUpon().appendPath(MOVIE_ID).
                     appendPath(PATH_PARAM).
-                    appendQueryParameter(API_KEY_PARAM, BuildConfig.MOVIE_DB_API_KEY).build();
+                    appendQueryParameter(API_KEY_PARAM, MovieContract.MOVIE_DB_API_KEY).build();
             URL url = new URL(builtUri.toString());
             urlConnection = (HttpURLConnection) url.openConnection();
             urlConnection.setRequestMethod("GET");
