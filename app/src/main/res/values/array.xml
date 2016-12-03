@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_settings_array">
+        <item>@string/sort_most_popular_setting</item>
+        <item>@string/sort_highest_rated_setting</item>
+        <item>@string/sort_favorites_setting</item>
+    </string-array>
+</resources>
